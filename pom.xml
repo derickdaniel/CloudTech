@@ -11,7 +11,7 @@
 
     <groupId>com.example</groupId>
     <artifactId>cloud-tech</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
 
     <name>cloud-tech</name>
     <description>cloud-tech spring boot</description>
