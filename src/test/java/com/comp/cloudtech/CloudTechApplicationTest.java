@@ -1,4 +1,4 @@
-package com.example.helloworld;
+package com.comp.cloudtech;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.example.helloworld.controller.HelloWorldController;
+import com.comp.cloudtech.controller.HelloWorldController;
 
 @SpringBootTest
-class HelloWorldApplicationTests {
+class CloudTechApplicationTest {
 
 	@Autowired
 	private HelloWorldController helloWorldController;

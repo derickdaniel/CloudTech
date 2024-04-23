@@ -1,4 +1,4 @@
-package com.comp.cloudteck;
+package com.comp.cloudtech.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9,11 +9,11 @@ public class TechController {
 	
 	@PostMapping("/")
 	public String process() {
-		return "result";
+		return "Cloud-Tech Home";
 	}
 
-	@GetMapping("/test")
+	@GetMapping("/ping")
 	public String sendGreetings() {
-		return "test";
+		return "pinged!";
 	}
 }

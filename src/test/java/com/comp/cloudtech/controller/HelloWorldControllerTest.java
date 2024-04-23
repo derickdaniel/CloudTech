@@ -1,4 +1,4 @@
-package com.example.helloworld.controller;
+package com.comp.cloudtech.controller;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
