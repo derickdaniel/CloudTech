@@ -37,4 +37,9 @@ public class TechController {
 	public String sendGreetings() {
 		return "pinged!";
 	}
+	
+	@GetMapping("/jerry")
+	public String jerry() {
+		return "Hello Jerry, Tapte ki tu :)";
+	}
 }
