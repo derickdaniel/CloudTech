@@ -40,6 +40,6 @@ public class TechController {
 	
 	@GetMapping("/jerry")
 	public String jerry() {
-		return "Hello Jerry, Tapte ki tu :)";
+		return "Hello Jerry, Tapte ki tu :).....";
 	}
 }
