@@ -2,7 +2,7 @@ package com.comp.cloudtech.controller;
 
 import java.net.UnknownHostException;
 import java.sql.Timestamp;
-import java.util.HashMap;
+import java.util.Date;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -35,11 +35,6 @@ public class TechController {
 
 	@GetMapping("/ping")
 	public String sendGreetings() {
-		return "pinged!";
-	}
-	
-	@GetMapping("/jerry")
-	public String jerry() {
-		return "Hellow there!!!!";
+		return "pinged at: " + new Timestamp(new Date().getTime());
 	}
 }
