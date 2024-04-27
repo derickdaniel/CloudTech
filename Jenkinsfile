@@ -1,12 +1,12 @@
 pipeline {
   agent none
   stages {
-    stage('Maven') {
+    stage('Maven Install') {
       steps {
-        sh 'cd /var/lib/jenkins/workspace/cloud-tech/ && mvn clean package -DskipTests'
+        sh 'mvn clean install -DskipTests'
       }
     }
-    stage('Docker') {
+    stage('Docker Build') {
       agent any
       steps {
 		sh 'docker stop $(docker ps -a -q --filter ancestor=cloud-tech)'
