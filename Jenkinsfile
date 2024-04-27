@@ -1,9 +1,14 @@
 pipeline {
   agent none
   stages {
-    stage('Maven') {
+    stage('Maven Install') {
+      agent {
+        docker {
+          image 'maven:3.6.3'
+        }
+      }
       steps {
-        sh 'mvn clean package -DskipTests'
+        sh 'sudo mvn clean install -DskipTests'
       }
     }
     stage('Docker Build') {
