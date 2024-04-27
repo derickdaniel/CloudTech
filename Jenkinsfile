@@ -1,12 +1,17 @@
 pipeline {
-  agent none
+  agent any
+
+  tools {
+    maven 'mvn-3.5.2'
+  }
+
   stages {
-    stage('Maven Install') {
-      agent any
+    stage('Maven Build') {
       steps {
-        sh 'mvn clean install -DskipTests'
+        sh 'mvn package'
       }
     }
+	
     stage('Docker Build') {
       agent any
       steps {
