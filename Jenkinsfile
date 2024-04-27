@@ -6,6 +6,13 @@ pipeline {
   }
 
   stages {
+    stage('Clean up') {
+	   steps {
+	    sh 'cd /var/lib/jenkins/workspace/cloud-tech/'
+		sh 'rm -rf target'
+	   }
+	}
+	
     stage('Maven Build') {
       steps {
         sh 'mvn clean package -DskipTests'
