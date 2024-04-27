@@ -9,7 +9,7 @@ pipeline {
     stage('Clean up') {
 	   steps {
 	    sh 'cd /var/lib/jenkins/workspace/cloud-tech-ppl/'
-		sh 'rm -r ./target'
+		sh 'rm -rf ./target'
 	   }
 	}
 	
