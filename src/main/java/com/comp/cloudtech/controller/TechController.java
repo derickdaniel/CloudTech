@@ -18,7 +18,7 @@ public class TechController {
 
 	Logger log = LoggerFactory.getLogger(TechController.class);
 	
-	final static int COUNTER = 1;
+	static int COUNTER = 1;
 
 	@Autowired
 	private EnvUtil envUtil;
@@ -37,6 +37,6 @@ public class TechController {
 
 	@GetMapping("/ping")
 	public String sendGreetings() {
-		return "pinged at: " + new Timestamp(new Date().getTime()) + " for " + COUNTER + " times";
+		return "pinged at: " + new Timestamp(new Date().getTime()) + " for " + COUNTER++ + " times";
 	}
 }
