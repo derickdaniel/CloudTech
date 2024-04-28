@@ -37,6 +37,6 @@ public class TechController {
 
 	@GetMapping("/ping")
 	public String sendGreetings() {
-		return "pinged at: " + new Timestamp(new Date().getTime()) + " for " + COUNTER++ + " times";
+		return "pinged at: " + new Timestamp(new Date().getTime()) + " for " + COUNTER++ + " times. \n Thankyou!!";
 	}
 }
