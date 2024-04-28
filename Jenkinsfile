@@ -23,7 +23,7 @@ pipeline {
       agent any
       steps {
 	    sh 'docker stop $(docker ps -a -q --filter ancestor=cloud-tech)'
-	    sh 'docker rmi -f $(docker images -qa -f 'dangling=true')'
+	    sh "docker rmi -f $(docker images -qa -f 'dangling=true')"
         sh 'docker buildx build /var/lib/jenkins/workspace/cloud-tech-ppl -t cloud-tech:latest'
         sh 'docker run -d -p 8081:8081  -it cloud-tech'
       }
