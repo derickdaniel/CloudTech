@@ -17,7 +17,7 @@ import com.comp.cloudtech.util.EnvUtil;
 public class TechController {
 
 	Logger log = LoggerFactory.getLogger(TechController.class);
-	
+
 	static int COUNTER = 1;
 
 	@Autowired
