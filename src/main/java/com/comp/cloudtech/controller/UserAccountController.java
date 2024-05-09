@@ -11,6 +11,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.comp.cloudtech.UserAccount;
@@ -23,6 +25,18 @@ public class UserAccountController {
 	UserAccountService userService;
 
 	Logger log = LoggerFactory.getLogger(UserAccountController.class);
+
+	@PostMapping("/users")
+	public UserAccount createUserAccount(@RequestBody UserAccount userAccount) {
+
+		log.info("Request to create user account at: " + new Timestamp(System.currentTimeMillis()));
+
+		userService.saveUser(userAccount);
+
+		log.info("Created user account at: " + new Timestamp(System.currentTimeMillis()));
+
+		return userAccount;
+	}
 
 	@GetMapping("/users")
 	public Map<Long, UserAccount> userList() throws UnknownHostException {

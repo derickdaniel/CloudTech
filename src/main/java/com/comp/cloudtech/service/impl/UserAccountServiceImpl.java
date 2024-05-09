@@ -1,5 +1,6 @@
 package com.comp.cloudtech.service.impl;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -13,8 +14,8 @@ import com.comp.cloudtech.service.UserAccountService;
 
 @Service
 @Transactional
-public class UserAccountServiceImpl implements UserAccountService{
-	
+public class UserAccountServiceImpl implements UserAccountService {
+
 	@Autowired
 	UserAccountRepository repo;
 
@@ -25,6 +26,8 @@ public class UserAccountServiceImpl implements UserAccountService{
 
 	@Override
 	public void saveUser(UserAccount userAccount) {
+		
+		userAccount.setCreatedAt(new Timestamp(System.currentTimeMillis()));
 		repo.save(userAccount);
 	}
 
