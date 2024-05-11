@@ -9,5 +9,7 @@ public interface UserAccountService {
 	List<UserAccount> listUsers();
 	
 	void saveUser(UserAccount userAccount);
+	
+	UserAccount updateUser(UserAccount userAccount, Long id);
 
 }

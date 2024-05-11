@@ -32,6 +32,10 @@ public class UserAccount {
 	@Column(name = "created_at")
 	public Timestamp createdAt;
 
+	public Long getId() {
+		return id;
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}
