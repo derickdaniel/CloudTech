@@ -11,6 +11,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,6 +36,18 @@ public class UserAccountController {
 		userService.saveUser(userAccount);
 
 		log.info("Created user account at: " + new Timestamp(System.currentTimeMillis()));
+
+		return userAccount;
+	}
+
+	@PatchMapping("/users/{id}")
+	public UserAccount updateUserAccount(@PathVariable("id") Long id, @RequestBody UserAccount userAccount) {
+
+		log.info("Request to update user account with id: " + id + " at: " + new Timestamp(System.currentTimeMillis()));
+
+		userAccount = userService.updateUser(userAccount, id);
+
+		log.info("Updated user account at: " + new Timestamp(System.currentTimeMillis()));
 
 		return userAccount;
 	}
